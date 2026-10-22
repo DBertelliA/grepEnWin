@@ -55,10 +55,15 @@ public class claseDelGrep {
                         System.out.println("No se ha encontrado el patrón");
                     }
 
+                    bfRead.close();
+                    inp.close();
+                    in.close();
+
                     i++;
+                    p.waitFor();
                 }
 
-            } catch (IOException e) {
+            } catch (InterruptedException|IOException e) {
                 System.err.println(e);
             }
         }else {
