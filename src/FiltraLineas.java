@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class claseDelGrep {
+public class FiltraLineas {
     /**
      * Este main ejecutará un proceso findstr el cual recibirá
      * un argumento en la llamada de la clase por consola ej: java (nombreClase).java \<patrón\>.
@@ -18,14 +18,15 @@ public class claseDelGrep {
      */
     public static void main(String[] args) {
         //System.out.println(args[0]);
-        if(args.length == 1) {
+
+        if(args.length == 0) {
             try {
                 Scanner sc = new Scanner(System.in);
                 int i = 0;
                 String linea = "...";
                 while (i < 6) {
                     //Proceso que inicia la ejecución en consola del findstr
-                    ProcessBuilder pb = new ProcessBuilder("findstr", args[0].toLowerCase(Locale.ROOT));
+                    ProcessBuilder pb = new ProcessBuilder("findstr", "la".toLowerCase(Locale.ROOT));
                     Process p = pb.start();
 
                     System.out.println((i +1) + ". Introduce una frase:");
@@ -50,7 +51,7 @@ public class claseDelGrep {
 
                     //Si la linea recibida en el codigo está vacia, significa que no se a encontrado el patrón pasado
                     if (lot != null) {
-                        System.out.println("Se ha encontrado el patron \"" + args[0] + "\" en la palabra " + lot);
+                        System.out.println("Se ha encontrado el patron \"" + "la" + "\" en la palabra " + lot);
                     } else {
                         System.out.println("No se ha encontrado el patrón");
                     }
